@@ -1,0 +1,265 @@
+main {
+    padding: 2rem 1rem;
+    max-width: 960px;
+    margin: 100px auto 0;
+}
+
+/* Slider */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: none;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.slide-text {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    max-width: 60%;
+}
+
+.slide-text h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.slide-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Botón */
+.btn {
+    display: inline-block;
+    background-color: #FF6392;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #FFE45E;
+}
+
+/* Botones del slider */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-btn.prev {
+    left: 10px;
+}
+
+.slider-btn.next {
+    right: 10px;
+}
+
+/* Más sobre nosotros */
+.more-about-us {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 2rem 1rem;
+    background-color: #FFE45E;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.more-about-us h2 {
+    font-size: 2rem;
+    color: #20070e;
+}
+
+.more-about-us p {
+    font-size: 1.2rem;
+    color: #20070e;
+}
+
+/* Enlaces legales */
+.legal-links {
+    background-color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.legal-links ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.legal-links a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: #333;
+}
+
+/* Suscripción */
+.subscribe-section {
+    background-color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.subscribe-section h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.subscribe-section form {
+    margin-bottom: 1rem;
+}
+
+.subscribe-section input[type="email"] {
+    padding: 0.5rem;
+    width: 250px;
+    max-width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.subscribe-section button {
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border: none;
+    background-color: #FF6392;
+    color: white;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-section button:hover {
+    background-color: #000000;
+}
+
+.subscribe-section .social-links a {
+    margin: 0 0.5rem;
+    color: #050505;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.subscribe-section .social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Reclamaciones */
+.reclamaciones-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 2rem 1rem;
+    background-color: #e7e7e7;
+    text-align: center;
+}
+
+.reclamaciones-content p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.reclamaciones-img {
+    width: 180px;
+    max-width: 90%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.reclamaciones-img:hover {
+    transform: scale(1.05);
+}
+
+/* Botón toggle */
+.toggle-about-btn {
+    color: #FF6392;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+.toggle-about-btn:hover {
+    text-decoration: underline;
+}
+
+/* Responsive específico del slider */
+@media (max-width: 768px) {
+    .slide-text {
+        max-width: 90%;
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    .slide-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-slider {
+        height: 300px;
+    }
+}

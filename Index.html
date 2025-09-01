@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArteNova</title>
+    <link rel="stylesheet" href="stylegeneral.css">
+    <link rel="stylesheet" href="styleinicio.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="header-group">
+        <header>
+            <h1><a href="Index.html">ArteNova</a></h1>
+
+            <!-- Sidebar celulares -->
+            <button class="hamburger" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav>
+                <ul>
+                    <li><a href="Index.html">Inicio</a></li>
+                    <li><a href="Artistas.html">Artistas</a></li>
+                    <li><a href="Catálogo.html">Catálogo</a></li>
+                    <li><a href="Exposiciones.html">Exposiciones</a></li>                    
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul>
+                    <li><a href="Index.html">Inicio</a></li>
+                    <li><a href="Artistas.html">Artistas</a></li>
+                    <li><a href="Catálogo.html">Catálogo</a></li>
+                    <li><a href="Exposiciones.html">Exposiciones</a></li>                    
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+                <div class="mobile-social-links">
+                    <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/es/" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+
+            </div>
+
+            <div class="menu-overlay" id="menuOverlay"></div>
+
+        </header>
+        <section class="artist-banner" role="banner" aria-label="Invitación para artistas">
+            <p>¿Eres artista? Súmate a nuestra comunidad</p>
+        </section>
+    </div>
+
+    <main>
+        <section class="hero-slider" aria-label="Slider principal">
+            <div class="slide active"
+                style="background-image: url('https://i.pinimg.com/736x/f6/b7/80/f6b780a78c182d4a021d04d5ada41c0d.jpg');"
+                role="group" aria-roledescription="slide" aria-label="Cuadros y Prints">
+                <div class="slide-text">
+                    <h2>La promesa del sol quieto</h2>
+                    <p>Aun sin cielo sobre ellos, los girasoles recuerdan la calidez de lo que alguna vez miraron.</p>
+                    <a href="Catálogo.html" class="btn">Ver Colección</a>
+                </div>
+            </div>
+            <div class="slide"
+                style="background-image: url('https://i.pinimg.com/736x/f1/b8/d5/f1b8d539c1f7a730baa5d61b20410053.jpg');"
+                role="group" aria-roledescription="slide" aria-label="Colección Tamas Legendarios">
+                <div class="slide-text">
+                    <h2>Donde duerme el verano</h2>
+                    <p>Entre mares dorados, la casa espera, intacta y tibia, como un recuerdo que aún florece.</p>
+                    <a href="Catálogo.html" class="btn">Ver Colección</a>
+                </div>
+            </div>
+            <div class="slide"
+                style="background-image: url('https://i.pinimg.com/736x/7b/60/4b/7b604b21b80e66b531b14fbac586a7ee.jpg');"
+                role="group" aria-roledescription="slide" aria-label="Toritos Puca">
+                <div class="slide-text">
+                    <h2>Flores para un rey dormido</h2>
+                    <p>En su trono de luz y pétalos, el pequeño monarca sueña con jardines que solo existen al otro lado
+                        del cristal.</p>
+                    <a href="Catálogo.html" class="btn">Ver Colección</a>
+                </div>
+            </div>
+
+            <button class="slider-btn prev" aria-label="Slide anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next" aria-label="Siguiente slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+
+        <section class="more-about-us">
+            <h2>Más sobre nosotros</h2>
+            <div class="articles-grid">
+                <p>
+                    <strong>ArteNova</strong> es una plataforma que celebra el arte auténtico. Apoyamos a artistas
+                    independientes para que vivan de su pasión, conecten con nuevas audiencias y reciban retribución
+                    justa por su talento.
+                </p>
+
+                <div class="extra-about-text" style="display: none; margin-top: 1rem;">
+                    <p>
+                        Creemos en un arte accesible, libre y diverso. Nuestra misión es conectar creadores con una
+                        comunidad solidaria, sin intermediarios limitantes. “Nova” simboliza ese brillo único que cada
+                        artista merece tener. Este es su espacio para brillar.
+                    </p>
+                </div>
+
+                <!-- botón de ver más -->
+                <a href="javascript:void(0);" class="toggle-about-btn">Ver más</a>
+            </div>
+        </section>
+        <br>
+        <section class="reclamaciones-section">
+            <div class="reclamaciones-content">
+                <p>¿Tienes una disconformidad o reclamo?</p>
+                <a href="Reclamaciones.html" target="_blank" rel="noopener">
+                    <img src="https://thecigarclub.com.pe/wp-content/uploads/2024/01/book-claim-icon.png"
+                        alt="Libro de Reclamaciones" class="reclamaciones-img" />
+                </a>
+            </div>
+        </section>
+
+        <section class="legal-links">
+            <ul>
+                <li><a href="Terminos.html">Términos y condiciones</a></li>
+                <li><a href="Política de reembolso.html">Política de reembolso</a></li>
+            </ul>
+        </section>
+
+
+        <section class="subscribe-section">
+            <h3>Suscríbete para recibir promociones:</h3>
+            <form>
+                <input type="email" placeholder="Correo electrónico" aria-label="Correo electrónico" />
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+            <div class="social-links">
+                <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/es/" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botones flotantes -->
+
+    <section class="Botones flotantes">
+        <div class="floating-buttons">
+            <a href="https://wa.me/707070707" class="floating-btn whatsapp" target="_blank" aria-label="WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+        </div>
+
+        <button id="faq-btn" class="faq-btn" aria-label="Preguntas frecuentes">
+            <i class="fas fa-question"></i>
+        </button>
+
+        <div class="faq-container" id="faq-container">
+            <div class="faq-item">
+                <strong>¿Cómo puedo contactar soporte?</strong>
+                <div class="faq-answer">Puedes contactarnos a través del formulario en nuestra página de contacto.</div>
+            </div>
+            <div class="faq-item">
+                <strong>¿Cómo me uno como artista?</strong>
+                <div class="faq-answer">Completa el formulario en la sección Contacto. Revisamos tu portafolio y te
+                    respondemos en 7 días</div>
+            </div>
+            <div class="faq-item">
+                <strong>¿Puedo pedir una obra personalizada?</strong>
+                <div class="faq-answer">¡Sí! Muchos de nuestros artistas ofrecen obras por encargo. Puedes escribirnos a
+                    contacto@artenova.pe indicando el estilo, dimensiones y presupuesto estimado. Te conectaremos con el
+                    artista ideal para tu visión.</div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>© 2025 Artenova. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JS -->
+
+<script src="main.js"></script>
+<script src="inicio.js"></script>
+
+</body>
+
+</html>

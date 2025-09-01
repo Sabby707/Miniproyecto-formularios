@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="stylegeneral.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>Libro de Reclamaciones - ArteNova</title>
+
+    <style>
+      body,
+      header,
+      nav,
+      h1,
+      ul,
+      li,
+      a {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background: #f9f9f9;
+        color: #222;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #5aa9e6;
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        background-color: #7fc8f8;
+        color: white;
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: #ff6392;
+      }
+
+      .libro-reclamaciones {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        background-color: #f4f4f4;
+        padding: 3rem 1rem;
+      }
+
+      .libro-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .libro-formulario {
+        flex: 1 1 60%;
+        max-width: 700px;
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+
+      .libro-formulario h2 {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        color: #333;
+      }
+
+      .libro-formulario h3 {
+        margin: 1.5rem 0 1rem;
+        font-size: 1.2rem;
+        color: #444;
+      }
+
+      .formulario-reclamo label {
+        display: block;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+        color: #444;
+      }
+
+      .formulario-reclamo input,
+      .formulario-reclamo select,
+      .formulario-reclamo textarea {
+        width: 100%;
+        padding: 0.6rem;
+        margin-top: 0.25rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 0.95rem;
+        background: #fafafa;
+      }
+
+      .formulario-reclamo .declaracion {
+        font-size: 0.9rem;
+        margin-top: 1rem;
+      }
+
+      .formulario-reclamo .btn {
+        margin-top: 1.5rem;
+        padding: 0.8rem 1.2rem;
+        background-color: #000;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .formulario-reclamo .btn:hover {
+        background-color: #444;
+      }
+
+      .libro-info {
+        flex: 1 1 35%;
+        max-width: 400px;
+        padding: 2rem;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        color: #333;
+        line-height: 1.6;
+        position: sticky;
+        top: 2rem;
+        align-self: start;
+      }
+
+      @media (max-width: 768px) {
+        .libro-container {
+          flex-wrap: wrap;
+          flex-direction: column;
+        }
+
+        .libro-formulario,
+        .libro-info {
+          max-width: 100%;
+          flex: 1 1 100%;
+        }
+
+        .libro-info {
+          position: relative;
+          top: auto;
+          align-self: auto;
+        }
+      }
+
+      footer {
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
+        color: #ffffff;
+        background-color: #5aa9e6;
+        margin-top: 3rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header-group">
+      <header>
+        <h1><a href="Index.html">ArteNova</a></h1>
+
+        <!-- Sidebar celulares -->
+        <button class="hamburger" aria-label="Abrir menú">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+          <ul>
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="Artistas.html">Artistas</a></li>
+            <li><a href="Catálogo.html">Catálogo</a></li>
+            <li><a href="Exposiciones.html">Exposiciones</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <!-- Menú celulares -->
+        <div class="mobile-menu" id="mobileMenu">
+          <button class="close-btn" aria-label="Cerrar menú">
+            <i class="fas fa-times"></i>
+          </button>
+          <ul>
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="Artistas.html">Artistas</a></li>
+            <li><a href="Catálogo.html">Catálogo</a></li>
+            <li><a href="Exposiciones.html">Exposiciones</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+          </ul>
+          <div class="mobile-social-links">
+            <a href="https://www.facebook.com/" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.instagram.com/" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.tiktok.com/es/" aria-label="TikTok"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="menu-overlay" id="menuOverlay"></div>
+      </header>
+    </div>
+    <main style="margin: 100px;">
+      <section class="libro-reclamaciones">
+        <div class="libro-container">
+          <!-- Formulario -->
+          <div class="libro-formulario">
+            <h2>Libro de Reclamaciones</h2>
+            <form action="#" method="post" class="formulario-reclamo">
+              <label>
+                Fecha de Reclamo *
+                <input type="date" name="fecha" required />
+              </label>
+
+              <h3>Identificación del consumidor reclamante</h3>
+
+              <label>
+                Tipo de documento *
+                <select required>
+                  <option value="">Seleccione</option>
+                  <option>DNI</option>
+                  <option>CE</option>
+                  <option>RUC</option>
+                </select>
+              </label>
+
+              <label>
+                Número de documento *
+                <input type="text" required />
+              </label>
+
+              <label>
+                Nombres *
+                <input type="text" required />
+              </label>
+
+              <label>
+                Apellidos *
+                <input type="text" required />
+              </label>
+
+              <label>
+                Teléfono *
+                <input type="tel" required />
+              </label>
+
+              <label>
+                Correo electrónico *
+                <input type="email" required />
+              </label>
+
+              <label>
+                Dirección *
+                <input type="text" required />
+              </label>
+
+              <label>
+                Descripción del reclamo *
+                <textarea rows="3" required></textarea>
+              </label>
+
+              <label>
+                Pedido del consumidor *
+                <textarea rows="3" required></textarea>
+              </label>
+
+              <label class="declaracion">
+                <input type="checkbox" required />
+                Declaro que la información brindada es veraz y acepto las
+                políticas de privacidad.
+              </label>
+
+              <button type="submit" class="btn">Enviar Reclamo</button>
+            </form>
+          </div>
+
+          <!-- Información lateral -->
+          <div class="libro-info">
+            <p>
+              Conforme a lo establecido en el Código de Protección y Defensa del
+              Consumidor, esta institución cuenta con un Libro de Reclamaciones
+              virtual a su disposición.
+            </p>
+            <p><strong>TAG ESTUDIO S.A.C.</strong></p>
+            <p>RUC: 20557983466</p>
+            <p>DOMICILIO FISCAL:</p>
+            <p>CAL. 28 DE JULIO NRO. 384 DPTO. 1004</p>
+            <p>MAGDALENA DEL MAR – LIMA – LIMA</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>© 2025 Origen Peregrino - Todos los derechos reservados</p>
+    </footer>
+  </body>
+
+  <!-- JS -->
+
+  <script src="main.js"></script>
+
+</html>

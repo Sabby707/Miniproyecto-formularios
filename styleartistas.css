@@ -1,0 +1,111 @@
+:root {
+    --main-yellow: #ffe45e;
+    --highlight-pink: #ff6392;
+    --deep-red: #530e22;
+    --text-dark: #333;
+    --text-light: #fff;
+    --shadow: rgba(0, 0, 0, 0.12);
+    --transition: 0.3s ease;
+    --radius: 12px;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fffef5;
+    color: var(--text-dark);
+}
+
+.container {
+    background-color: var(--main-yellow);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 18px var(--shadow);
+    max-width: 900px;
+    margin: 2.5rem auto;
+    text-align: center;
+}
+
+.container p {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.container strong {
+    color: var(--deep-red);
+}
+
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 3rem 2rem;
+    justify-items: center;
+}
+
+.artista {
+    background-color: var(--main-yellow);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 20px var(--shadow);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.artista:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+}
+
+.artista img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-bottom: 4px solid var(--highlight-pink);
+}
+
+.artista:hover img {
+    transform: scale(1.05);
+}
+
+.artista h3 {
+    margin: 1rem 1rem 0.5rem;
+    font-size: 1.3rem;
+    color: #222;
+}
+
+.artista p {
+    padding: 0 1rem 1.5rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+    flex-grow: 1;
+}
+
+main {
+    margin-top: 120px;  
+}
+
+
+/* Responsive*/
+@media (max-width: 600px) {
+    .container p {
+        font-size: 1.1rem;
+    }
+
+    .artista img {
+        height: 300px;
+    }
+
+    .contenedor {
+        padding: 2rem 1rem;
+    }
+}

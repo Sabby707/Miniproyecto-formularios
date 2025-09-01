@@ -1,0 +1,291 @@
+/* RESET Y FUENTE BASE */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-top: 120px;  /* Reducido */
+}
+
+/* CONTACTO */
+#contactanos1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#contactanos1 h1 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+#contactanos2 .contactanos-h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; 
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: var(--main-yellow);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 18px var(--shadow);
+    max-width: 900px;
+    margin: 2.5rem auto;
+    text-align: center;
+}
+
+.container p {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.container strong {
+    color: var(--deep-red);
+}
+
+.intro-contactanos {
+    background-color: #FFE45E;
+    max-width: 1000px;
+    margin: 0 auto 30px auto;  
+    padding: 30px 40px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.intro-contactanos-img {
+    width: 100%;
+    margin-top: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 40px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+    background-color: rgb(176, 170, 170);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-card {
+    width: 250px;
+    height: 220px;
+}
+
+.card p {
+    text-align: center;
+    padding: auto;
+}
+
+/* FORMULARIO */
+.form {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 170px;
+    padding-right: 170px;
+    padding-top: 25px;
+}
+
+.envoltura-form {
+    background-color: #FF6392;
+    height: 450px;
+    width: 380px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    padding: 30px 25px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.envoltura-form form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.envoltura-form form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.envoltura-form form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.envoltura-form form input {
+    padding: 10px;
+    border: none;
+    font-size: 14px;
+}
+
+.envoltura-form form input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+.envoltura-form form button {
+    background-color: #fbfbfb;
+    color: #FF6392;
+    border: none;
+    padding: 12px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    height: 35px;
+    margin-top: 50px;
+}
+
+.envoltura-form form button:hover {
+    background-color: #ff639252;
+    color: #fbfbfb;
+}
+
+.envoltura-form form p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.envoltura-form form a {
+    color: #fff;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+.form img {
+    height: 450px;
+    width: 380px;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* TESTIMONIOS */
+#testimonios {
+    margin-top: 30px;
+    margin-bottom: 0%;
+}
+
+#testimonios h2 {
+    background-color: #5AA9E6;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding-top: 7px;
+    padding-bottom: 3px;
+    margin: 0;
+}
+
+.contenedor-testimonios {
+    background-color: gray;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card2 {
+    width: 220px;
+    height: auto;
+    background-color: #fbfbfb;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.card2 img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .intro-contactanos-img {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: auto; 
+        gap: 20px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 280px;
+        height: auto;
+        margin: 0 auto 20px auto;
+    }
+
+    .img-card {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    /* formulario */
+    .form {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        gap: 30px;
+    }
+
+    .form img {
+        display: none; 
+    }
+
+    .envoltura-form {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .envoltura-form form button {
+        margin-top: 20px;
+    }
+}

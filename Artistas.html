@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Artistas | ArteNova</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="stylegeneral.css" />
+  <link rel="stylesheet" href="styleartistas.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="header-group">
+    <header>
+      <h1><a href="Index.html">ArteNova</a></h1>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
+
+
+      <nav>
+        <ul>
+          <li><a href="Index.html">Inicio</a></li>
+          <li><a href="Artistas.html">Artistas</a></li>
+          <li><a href="Catálogo.html">Catálogo</a></li>
+          <li><a href="Exposiciones.html">Exposiciones</a></li>
+          <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="artist-banner" role="banner" aria-label="Invitación para artistas">
+      <p>¿Eres artista? Súmate a nuestra comunidad</p>
+    </section>
+  </div>
+
+  <!-- Menú cel -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-btn" id="closeMenu">&times;</button>
+    <ul>
+      <li><a href="Index.html">Inicio</a></li>
+      <li><a href="Artistas.html">Artistas</a></li>
+      <li><a href="Catálogo.html">Catálogo</a></li>
+      <li><a href="Exposiciones.html">Exposiciones</a></li>
+      <li><a href="Contacto.html">Contacto</a></li>
+    </ul>
+    <div class="mobile-social-links">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+  </div>
+
+  <main style="margin-top: 120px;">
+
+    <div class="intro-artistas">
+      <section class="container">
+        <p>
+          Conoce a los artistas detrás de cada obra. En nuestra página web, te invitamos a
+          descubrir sus historias, inspiraciones y el talento que dan vida a cada creación.
+          <strong>¡Explóralos ahora!</strong>
+        </p>
+      </section>
+    </div>
+
+    <section class="contenedor">
+      <article class="artista" aria-label="Ana López, ilustradora">
+        <img src="https://i.pinimg.com/236x/4e/d4/9d/4ed49decb32e91fc4a5bb3ab67d20c19.jpg"
+          alt="Retrato de Ana López, ilustradora" loading="lazy" />
+        <h3>Ana López</h3>
+        <p>Ilustradora con formación en Historia del Arte. Actualmente trabaja en México, donde también imparte clases.
+          Publicó su primer álbum en 2001.</p>
+      </article>
+
+      <article class="artista" aria-label="Juan Contreras, pintor">
+        <img src="https://i.pinimg.com/236x/6d/1e/ef/6d1eefb4f685953b77b2e0bec9c2a1cf.jpg"
+          alt="Retrato de Juan Contreras, pintor" loading="lazy" />
+        <h3>Juan Contreras</h3>
+        <p>Especialista en ilustración y pintura. Ganador del Premio Internacional de Ilustración en 2017. Exhibe en
+          museos de Francia.</p>
+      </article>
+
+      <article class="artista" aria-label="Carlos Gutiérrez, dibujante y músico">
+        <img
+          src="https://img.freepik.com/foto-gratis/modelo-hombre-posando-pintura-corporal-colorida_23-2149668958.jpg?semt=ais_hybrid&w=740&q=80"
+          alt="Retrato de Carlos Gutiérrez" loading="lazy" />
+        <h3>Carlos Gutiérrez</h3>
+        <p>Graduado en Bellas Artes con especialidad en Dibujo. En 2000 lanzó su primer proyecto musical ilustrado,
+          marcando un hito en su carrera.</p>
+      </article>
+
+      <article class="artista" aria-label="Kiara Herrera, autora e ilustradora">
+        <img
+          src="https://st.depositphotos.com/1003697/2739/i/450/depositphotos_27392201-stock-photo-beautiful-woman-with-luxury-makeup.jpg"
+          alt="Retrato de Kiara Herrera" loading="lazy" />
+        <h3>Kiara Herrera</h3>
+        <p>Autora e ilustradora de cómics. Especializada en creatividad y dirección de arte. Reconocida con premios
+          nacionales.</p>
+      </article>
+
+      <article class="artista" aria-label="Gabriela Juárez, ilustradora">
+        <img src="https://i.pinimg.com/736x/69/2e/61/692e61c3620968f0c237a31e35f735dc.jpg"
+          alt="Retrato de Gabriela Juárez" loading="lazy" />
+        <h3>Gabriela Juárez</h3>
+        <p>Ilustradora enfocada en libros y campañas publicitarias. Publicada por universidades y ferias
+          internacionales.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Botones flotantes -->
+  <section class="Botones flotantes">
+    <div class="floating-buttons">
+      <a href="https://wa.me/707070707" class="floating-btn whatsapp" target="_blank" aria-label="WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      </a>
+    </div>
+
+    <button id="faq-btn" class="faq-btn" aria-label="Preguntas frecuentes">
+      <i class="fas fa-question"></i>
+    </button>
+
+    <div class="faq-container" id="faq-container">
+      <div class="faq-item">
+        <strong>¿Cómo puedo contactar soporte?</strong>
+        <div class="faq-answer">Puedes contactarnos a través del formulario en nuestra página de contacto.</div>
+      </div>
+      <div class="faq-item">
+        <strong>¿Cómo me uno como artista?</strong>
+        <div class="faq-answer">Completa el formulario en la sección Contacto. Revisamos tu portafolio y te respondemos
+          en 7 días.</div>
+      </div>
+      <div class="faq-item">
+        <strong>¿Puedo pedir una obra personalizada?</strong>
+        <div class="faq-answer">¡Sí! Muchos de nuestros artistas ofrecen obras por encargo. Puedes escribirnos a
+          contacto@artenova.pe indicando el estilo, dimensiones y presupuesto estimado. Te conectaremos con el artista
+          ideal para tu visión.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ArteNova. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="main.js"></script>
+  <script src="artistas.js"></script>
+
+</body>
+
+</html>
