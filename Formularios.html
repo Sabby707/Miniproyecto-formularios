@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArteNova</title>
+    <link rel="stylesheet" href="stylegeneral.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main margin-top: 50px;>
+
+        <form>
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Correo Electrónico:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label>Valoración</label>
+    <div class="puntaje-estrellas">
+        <input type="radio" id="estrella5" name="puntuacion" value="5">
+        <label for="estrella5">★</label>
+
+        <input type="radio" id="estrella4" name="puntuacion" value="4">
+        <label for="estrella4">★</label>
+
+        <input type="radio" id="estrella3" name="puntuacion" value="3">
+        <label for="estrella3">★</label>
+
+        <input type="radio" id="estrella2" name="puntuacion" value="2">
+        <label for="estrella2">★</label>
+
+        <input type="radio" id="estrella1" name="puntuacion" value="1">
+        <label for="estrella1">★</label><br><br>
+    </div>
+
+    <label for="comentarios">Deja tu comentario!</label><br>
+        <textarea name="comentarios" id="comentarios" rows="4" placeholder="Escribe tu opinion aquí..."></textarea>><br><br>
+
+
+    <label>¿Recomendarías ArteNova?</label>
+    <div>
+        <input type="radio" id="si" name="recomienda" value="Sí">
+        <label for="si">Sí</label>
+
+        <input type="radio" id="no" name="recomienda" value="No">
+        <label for="no">No</label>
+    </div>
+
+
+    <button type="button" onclick="mostrar()">Enviar</button>
+  </form>
+
+
+    </main>
+
+
+
+
+    <!-- Botones flotantes -->
+
+    <section class="Botones flotantes">
+        <div class="floating-buttons">
+            <a href="https://wa.me/707070707" class="floating-btn whatsapp" target="_blank" aria-label="WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+        </div>
+
+        <button id="faq-btn" class="faq-btn" aria-label="Preguntas frecuentes">
+            <i class="fas fa-question"></i>
+        </button>
+
+        <div class="faq-container" id="faq-container">
+            <div class="faq-item">
+                <strong>¿Cómo puedo contactar soporte?</strong>
+                <div class="faq-answer">Puedes contactarnos a través del formulario en nuestra página de contacto.</div>
+            </div>
+            <div class="faq-item">
+                <strong>¿Cómo me uno como artista?</strong>
+                <div class="faq-answer">Completa el formulario en la sección Contacto. Revisamos tu portafolio y te
+                    respondemos en 7 días</div>
+            </div>
+            <div class="faq-item">
+                <strong>¿Puedo pedir una obra personalizada?</strong>
+                <div class="faq-answer">¡Sí! Muchos de nuestros artistas ofrecen obras por encargo. Puedes escribirnos a
+                    contacto@artenova.pe indicando el estilo, dimensiones y presupuesto estimado. Te conectaremos con el
+                    artista ideal para tu visión.</div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>© 2025 Artenova. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JS -->
+
+    <script src="main.js"></script>
+</body>
+
+</html>
