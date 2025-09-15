@@ -1,314 +1,329 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Membresía</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fef9f9;
+      color: #3a3a3a;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      align-items: flex-start;
+    }
+
+    form#membershipForm {
+      background-color: #fff;
+      padding: 2.5rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+      max-width: 650px;
+      width: 100%;
+      text-align: left;
+    }
+
+    form#membershipForm h2 {
+      color: #f06292;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    form#membershipForm h3 {
+      color: #ffca28;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      border-bottom: 2px solid #ffca28;
+      padding-bottom: 0.3rem;
+    }
+
+    #membershipInfo p {
+      color: #555;
+      margin-bottom: 1.8rem;
+      font-size: 1rem;
+    }
+
+    #membershipInfo {
+      background-color: #fff5f8;
+      padding: 1.8rem 2rem;
+      border-radius: 14px;
+      box-shadow: 0 6px 15px rgba(255, 202, 40, 0.2);
+      margin-bottom: 2.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+    }
+
+    table thead tr {
+      background-color: #ffe082;
+      color: #795548;
+      font-weight: 600;
+    }
+
+    table, th, td {
+      border: 1px solid #ffd54f;
+      padding: 10px 14px;
+    }
+
+    table tbody tr:nth-child(even) {
+      background-color: #fff8e1;
+    }
+
+    table ul {
+      padding-left: 1.2rem;
+      list-style-type: disc;
+      color: #4a4a4a;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 0.55rem 0.85rem;
+      margin-bottom: 1.4rem;
+      border: 2px solid #f8bbd0;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      background-color: #fff;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="date"]:focus,
+    select:focus {
+      border-color: #f06292;
+      outline: none;
+      box-shadow: 0 0 8px rgba(240, 98, 146, 0.5);
+    }
+
+    input[type="checkbox"] {
+      margin-right: 0.5rem;
+      transform: scale(1.1);
+      vertical-align: middle;
+    }
+
+    label[for="terms"],
+    label[for="consent"] {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    label a {
+      color: #f06292;
+      text-decoration: none;
+    }
+
+    label a:hover {
+      text-decoration: underline;
+      color: #d81b60;
+    }
+
+    button[type="submit"] {
+      background: linear-gradient(90deg, #f06292 0%, #ffca28 100%);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 0.85rem 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      width: 100%;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 15px rgba(240, 98, 146, 0.5);
+    }
+
+    button[type="submit"]:hover {
+      box-shadow: 0 6px 20px rgba(255, 202, 40, 0.7);
+      transform: scale(1.05);
+    }
+
+    input[type="checkbox"][name="eventPreference"] {
+      margin-right: 0.6rem;
+    }
+
+    input[type="checkbox"][name="eventPreference"] + label {
+      display: inline-block;
+      margin-right: 1.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #444;
+    }
+
+    /* Responsive */
+    @media (max-width: 680px) {
+      form#membershipForm {
+        padding: 1.5rem 1rem;
+        max-width: 100%;
+      }
+
+      table,
+      table thead,
+      table tbody,
+      table th,
+      table td,
+      table tr {
+        display: block;
+        width: 100%;
+      }
+
+      table thead {
+        display: none;
+      }
+
+      table tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid #ffd54f;
+        border-radius: 10px;
+        padding: 1rem;
+        background-color: #fff8e1;
+      }
+
+      table td {
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+        border: none;
+        border-bottom: 1px solid #ffd54f;
+      }
+
+      table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        top: 0.8rem;
+        font-weight: bold;
+        color: #795548;
+      }
+    }
+  </style>
 </head>
-<style>
-   /* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Fuente y fondo general */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fef9f9; /* Muy suave rosado-blanco */
-  color: #3a3a3a;
-  line-height: 1.5;
-  padding: 2rem 1rem;
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  align-items: flex-start;
-}
-
-/* Contenedor principal del formulario */
-form#membershipForm {
-  background-color: #fff;
-  padding: 2.5rem 3rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3); /* sombra rosa suave */
-  max-width: 650px;
-  width: 100%;
-  text-align: left;
-}
-
-/* Títulos */
-form#membershipForm h2 {
-  color: #f06292; /* Rosa fuerte */
-  margin-bottom: 1.2rem;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-form#membershipForm h3 {
-  color: #ffca28; /* Amarillo dorado */
-  margin-bottom: 1rem;
-  font-weight: 700;
-  border-bottom: 2px solid #ffca28;
-  padding-bottom: 0.3rem;
-}
-
-/* Texto párrafo */
-#membershipInfo p {
-  color: #555;
-  margin-bottom: 1.8rem;
-  font-size: 1rem;
-}
-
-/* Sección de membresía separada */
-#membershipInfo {
-  background-color: #fff5f8; /* Rosa muy claro */
-  padding: 1.8rem 2rem;
-  border-radius: 14px;
-  box-shadow: 0 6px 15px rgba(255, 202, 40, 0.2); /* sombra amarilla suave */
-  margin-bottom: 2.5rem;
-}
-
-/* Tabla */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.95rem;
-  margin-top: 1rem;
-}
-
-table thead tr {
-  background-color: #ffe082; /* amarillo pastel */
-  color: #795548; /* marrón suave */
-  font-weight: 600;
-}
-
-table, th, td {
-  border: 1px solid #ffd54f; /* amarillo más oscuro */
-  padding: 10px 14px;
-}
-
-table tbody tr:nth-child(even) {
-  background-color: #fff8e1; /* amarillo muy claro */
-}
-
-/* Listas dentro de la tabla */
-table ul {
-  padding-left: 1.2rem;
-  list-style-type: disc;
-  color: #4a4a4a;
-}
-
-/* Labels */
-label {
-  display: block;
-  margin-bottom: 0.4rem;
-  font-weight: 600;
-  color: #555;
-}
-
-/* Inputs, selects */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-select {
-  width: 100%;
-  padding: 0.55rem 0.85rem;
-  margin-bottom: 1.4rem;
-  border: 2px solid #f8bbd0; /* rosa pastel */
-  border-radius: 10px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-  background-color: #fff;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-input[type="date"]:focus,
-select:focus {
-  border-color: #f06292; /* rosa fuerte */
-  outline: none;
-  box-shadow: 0 0 8px rgba(240, 98, 146, 0.5);
-}
-
-/* Checkbox y label inline */
-input[type="checkbox"] {
-  margin-right: 0.5rem;
-  transform: scale(1.1);
-  vertical-align: middle;
-}
-
-label[for="terms"],
-label[for="consent"] {
-  font-weight: 500;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-/* Links dentro de labels */
-label a {
-  color: #f06292;
-  text-decoration: none;
-}
-
-label a:hover {
-  text-decoration: underline;
-  color: #d81b60;
-}
-
-/* Botón */
-button[type="submit"] {
-  background: linear-gradient(90deg, #f06292 0%, #ffca28 100%);
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  padding: 0.85rem 0;
-  font-size: 1.15rem;
-  font-weight: 700;
-  width: 100%;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 15px rgba(240, 98, 146, 0.5);
-}
-
-button[type="submit"]:hover {
-  box-shadow: 0 6px 20px rgba(255, 202, 40, 0.7);
-  transform: scale(1.05);
-}
-
-/* Separadores para mejor lectura */
-br + br {
-  margin-bottom: 1rem;
-}
-
-/* Para que los checkbox de eventos estén con label en línea */
-input[type="checkbox"][name="eventPreference"] {
-  margin-right: 0.6rem;
-}
-
-input[type="checkbox"][name="eventPreference"] + label {
-  display: inline-block;
-  margin-right: 1.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: #444;
-}
-
-/* Responsive */
-@media (max-width: 680px) {
-  form#membershipForm {
-    padding: 1.8rem 1.8rem;
-  }
-
-  table {
-    font-size: 0.9rem;
-  }
-}
-
-</style>
 <body>
-    <form id="membershipForm" action="/submit-membership" method="POST">
 
-  <h2>Registro de Membresía</h2>
+  <form id="membershipForm" action="/submit-membership" method="POST">
 
-  <label for="fullName">Nombre completo*</label>
-  <input type="text" id="fullName" name="fullName" required placeholder="Tu nombre completo"><br>
+    <h2>Registro de Membresía</h2>
 
-  <label for="email">Correo electrónico*</label>
-  <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com"><br>
+    <label for="fullName">Nombre completo*</label>
+    <input type="text" id="fullName" name="fullName" required placeholder="Tu nombre completo"><br>
 
-  <label for="phone">Número de teléfono</label>
-  <input type="tel" id="phone" name="phone" placeholder="+34 612 345 678"><br>
+    <label for="email">Correo electrónico*</label>
+    <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com"><br>
 
-  <label for="birthDate">Fecha de nacimiento</label>
-  <input type="date" id="birthDate" name="birthDate"><br>
+    <label for="phone">Número de teléfono</label>
+    <input type="tel" id="phone" name="phone" placeholder="+34 612 345 678"><br>
 
-  <section id="membershipInfo">
-  <h3>Membresías y beneficios exclusivos</h3>
-  <p>Elige la membresía que mejor se adapte a ti y disfruta de los siguientes beneficios:</p>
+    <label for="birthDate">Fecha de nacimiento</label>
+    <input type="date" id="birthDate" name="birthDate"><br>
 
-  <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 600px;">
-    <thead>
-      <tr>
-        <th>Nivel</th>
-        <th>Beneficios principales</th>
-        <th>Precio mensual</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Básica</strong></td>
-        <td>
-          <ul>
-            <li>Newsletter mensual con novedades y promociones.</li>
-            <li>Acceso a descuentos exclusivos online.</li>
-          </ul>
-        </td>
-        <td>$10</td>
-      </tr>
-      <tr>
-        <td><strong>Premium</strong></td>
-        <td>
-          <ul>
-            <li>Todo lo de Básica, más:</li>
-            <li>Acceso anticipado a nuevas colecciones.</li>
-            <li>Invitaciones a eventos especiales.</li>
-          </ul>
-        </td>
-        <td>$30</td>
-      </tr>
-      <tr>
-        <td><strong>VIP</strong></td>
-        <td>
-          <ul>
-            <li>Todo lo de Premium, más:</li>
-            <li>Asesoría personalizada para compra e inversión.</li>
-            <li>Acceso VIP a eventos privados.</li>
-            <li>Regalos exclusivos y acceso prioritario.</li>
-          </ul>
-        </td>
-        <td>$50</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+    <section id="membershipInfo">
+      <h3>Membresías y beneficios exclusivos</h3>
+      <p>Elige la membresía que mejor se adapte a ti y disfruta de los siguientes beneficios:</p>
 
-<!-- Luego el selector de membresía -->
-<label for="membershipType">Tipo de membresía*</label>
-<select id="membershipType" name="membershipType" required>
-  <option value="" disabled selected>Selecciona una opción</option>
-  <option value="basica">Básica – $10 / mes</option>
-  <option value="premium">Premium – $30 / mes</option>
-  <option value="vip">VIP – $50 / mes</option>
-</select><br>
+      <table>
+        <tbody>
+          <tr>
+            <td data-label="Nivel"><strong>Básica</strong></td>
+            <td data-label="Beneficios principales">
+              <ul>
+                <li>Newsletter mensual con novedades y promociones.</li>
+                <li>Acceso a descuentos exclusivos online.</li>
+              </ul>
+            </td>
+            <td data-label="Precio mensual">$10</td>
+          </tr>
+          <tr>
+            <td data-label="Nivel"><strong>Premium</strong></td>
+            <td data-label="Beneficios principales">
+              <ul>
+                <li>Todo lo de Básica, más:</li>
+                <li>Acceso anticipado a nuevas colecciones.</li>
+                <li>Invitaciones a eventos especiales.</li>
+              </ul>
+            </td>
+            <td data-label="Precio mensual">$30</td>
+          </tr>
+          <tr>
+            <td data-label="Nivel"><strong>VIP</strong></td>
+            <td data-label="Beneficios principales">
+              <ul>
+                                <li>Todo lo de Premium, más:</li>
+                <li>Asesoría personalizada para compra e inversión.</li>
+                <li>Acceso VIP a eventos privados.</li>
+                <li>Regalos exclusivos y acceso prioritario.</li>
+              </ul>
+            </td>
+            <td data-label="Precio mensual">$50</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-  <label for="paymentMethod">Método de pago preferido</label>
-  <select id="paymentMethod" name="paymentMethod">
-    <option value="" disabled selected>Selecciona una opción</option>
-    <option value="tarjeta">Tarjeta de crédito/débito</option>
-    <option value="paypal">PayPal</option>
-    <option value="transferencia">Transferencia bancaria</option>
-  </select><br>
+    <label for="membershipType">Tipo de membresía*</label>
+    <select id="membershipType" name="membershipType" required>
+      <option value="" disabled selected>Selecciona una opción</option>
+      <option value="basica">Básica – $10 / mes</option>
+      <option value="premium">Premium – $30 / mes</option>
+      <option value="vip">VIP – $50 / mes</option>
+    </select><br>
 
-  <label for="contactPreference">Preferencia para eventos</label>
-  <input type="checkbox" id="eventVirtual" name="eventPreference" value="Virtual">
-  <label for="eventVirtual">Virtual</label><br>
-  <input type="checkbox" id="eventPresencial" name="eventPreference" value="Presencial">
-  <label for="eventPresencial">Presencial</label><br>
+    <label for="paymentMethod">Método de pago preferido</label>
+    <select id="paymentMethod" name="paymentMethod">
+      <option value="" disabled selected>Selecciona una opción</option>
+      <option value="tarjeta">Tarjeta de crédito/débito</option>
+      <option value="paypal">PayPal</option>
+      <option value="transferencia">Transferencia bancaria</option>
+    </select><br>
 
-  <input type="checkbox" id="terms" name="terms" required>
-  <label for="terms">Acepto los <a href="/terminos-y-condiciones" target="_blank">términos y condiciones</a> y la <a href="/politica-de-privacidad" target="_blank">política de privacidad</a>*</label><br>
+    <label for="contactPreference">Preferencia para eventos</label>
+    <input type="checkbox" id="eventVirtual" name="eventPreference" value="Virtual">
+    <label for="eventVirtual">Virtual</label><br>
+    <input type="checkbox" id="eventPresencial" name="eventPreference" value="Presencial">
+    <label for="eventPresencial">Presencial</label><br>
 
-  <input type="checkbox" id="consent" name="consent">
-  <label for="consent">Acepto recibir comunicaciones promocionales y noticias</label><br>
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">Acepto los <a href="/terminos-y-condiciones" target="_blank">términos y condiciones</a> y la <a href="/politica-de-privacidad" target="_blank">política de privacidad</a>*</label><br>
 
-  <button type="submit">Registrarme</button>
+    <input type="checkbox" id="consent" name="consent">
+    <label for="consent">Acepto recibir comunicaciones promocionales y noticias</label><br>
 
-</form>
+    <button type="submit">Registrarme</button>
+
+  </form>
 
 </body>
 </html>
+
