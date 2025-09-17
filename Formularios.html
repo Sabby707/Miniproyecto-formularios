@@ -9,51 +9,187 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
+<style>
+    input[type="radio"] {
+        accent-color: #ffdd36;
+    }
+
+
+    .form-title {
+        text-align: center;
+        color: #f06292;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+
+    form {
+        max-width: 600px;
+        margin: 120px auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #666;
+        font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 2px solid #f8bbd0;
+        border-radius: 5px;
+    }
+
+    .puntaje-estrellas {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    .puntaje-estrellas input[type="radio"] {
+        display: none;
+    }
+
+    .puntaje-estrellas label {
+        font-size: 30px;
+        color: #ccc;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .puntaje-estrellas input[type="radio"]:checked~label,
+    .puntaje-estrellas label:hover,
+    .puntaje-estrellas label:hover~label {
+        color: gold;
+    }
+
+    .recomienda {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #FF6392;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #ffdd36;
+    }
+</style>
+
 <body>
 
-    <main margin-top: 50px;>
+    <div class="header-group">
+        <header>
+            <h1><a href="index.html">ArteNova</a></h1>
 
-        <form>
-    <label for="name">Nombre:</label>
-    <input type="text" id="name" name="name" required><br><br>
+            <!-- Sidebar celulares -->
+            <button class="hamburger" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
 
-    <label for="email">Correo Electrónico:</label>
-    <input type="email" id="email" name="email" required><br><br>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Artistas.html">Artistas</a></li>
+                    <li><a href="Catálogo.html">Catálogo</a></li>
+                    <li><a href="Exposiciones.html">Exposiciones</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                    <li><a href="Formularios.html">Formularios</a></li>
+                    <li><a href="Membresia.html">Membresia</a></li>
+                </ul>
+            </nav>
 
-    <label>Valoración</label>
-    <div class="puntaje-estrellas">
-        <input type="radio" id="estrella5" name="puntuacion" value="5">
-        <label for="estrella5">★</label>
+            <div class="mobile-menu" id="mobileMenu">
+                <button class="close-btn" aria-label="Cerrar menú">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Artistas.html">Artistas</a></li>
+                    <li><a href="Catálogo.html">Catálogo</a></li>
+                    <li><a href="Exposiciones.html">Exposiciones</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+                <div class="mobile-social-links">
+                    <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/es/" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
 
-        <input type="radio" id="estrella4" name="puntuacion" value="4">
-        <label for="estrella4">★</label>
+            </div>
 
-        <input type="radio" id="estrella3" name="puntuacion" value="3">
-        <label for="estrella3">★</label>
+            <div class="menu-overlay" id="menuOverlay"></div>
 
-        <input type="radio" id="estrella2" name="puntuacion" value="2">
-        <label for="estrella2">★</label>
-
-        <input type="radio" id="estrella1" name="puntuacion" value="1">
-        <label for="estrella1">★</label><br><br>
+        </header>
+        <section class="artist-banner" role="banner" aria-label="Invitación para artistas">
+            <p>¿Eres artista? Súmate a nuestra comunidad</p>
+        </section>
     </div>
 
-    <label for="comentarios">Deja tu comentario!</label><br>
-        <textarea name="comentarios" id="comentarios" rows="4" placeholder="Escribe tu opinion aquí..."></textarea>><br><br>
+    <main>
+
+        <form id="usuario">
+            <h1 class="form-title">¿Que opinas de ArteNova?</h1><br>
 
 
-    <label>¿Recomendarías ArteNova?</label>
-    <div>
-        <input type="radio" id="si" name="recomienda" value="Sí">
-        <label for="si">Sí</label>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required><br><br>
 
-        <input type="radio" id="no" name="recomienda" value="No">
-        <label for="no">No</label>
-    </div>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label>Valoración</label>
+            <div class="puntaje-estrellas">
+                <input type="radio" id="estrella5" name="puntuacion" value="5" required>
+                <label for="estrella5">★</label>
+
+                <input type="radio" id="estrella4" name="puntuacion" value="4">
+                <label for="estrella4">★</label>
+
+                <input type="radio" id="estrella3" name="puntuacion" value="3">
+                <label for="estrella3">★</label>
+
+                <input type="radio" id="estrella2" name="puntuacion" value="2">
+                <label for="estrella2">★</label>
+
+                <input type="radio" id="estrella1" name="puntuacion" value="1">
+                <label for="estrella1">★</label><br><br>
+            </div>
+
+            <label for="comentarios">Deja tu comentario!</label><br>
+            <textarea name="comentarios" id="comentarios" rows="4" placeholder="Escribe tu opinión aquí..."
+                required></textarea><br><br>
+
+            <label>¿Recomendarías ArteNova?</label>
+            <div class="recomienda">
+                <input type="radio" id="si" name="recomienda" value="Sí" required>
+                <label for="si">Sí</label>
+
+                <input type="radio" id="no" name="recomienda" value="No">
+                <label for="no">No</label>
+            </div>
 
 
-    <button type="button" onclick="mostrar()">Enviar</button>
-  </form>
+
+            <button type="submit">Enviar</button>
+
+        </form>
 
 
     </main>
@@ -101,6 +237,7 @@
     <!-- JS -->
 
     <script src="main.js"></script>
+    <script src="formulario.js"></script>
 </body>
 
 </html>
