@@ -31,21 +31,6 @@ document.getElementById("usuario").addEventListener("submit", function (event) {
     enviar(); 
 });
 
-function mostrar() {
-    const modal = document.getElementById("modal");
-    modal.style.display = "flex";
-
-    document.getElementById("cerrar").onclick = function() {
-        modal.style.display = "none";
-    };
-
-   
-    window.onclick = function(e) {
-        if (e.target === modal) {
-            modal.style.display = "none";
-        }
-    };
-}
 
 
 
