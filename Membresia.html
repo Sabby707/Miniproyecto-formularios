@@ -5,232 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registro de Membresía</title>
   <link rel="stylesheet" href="stylegeneral.css" />
-  <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      overflow-x: hidden;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fef9f9;
-      color: #3a3a3a;
-      line-height: 1.5;
-      padding: 2rem 1rem;
-      display: flex;
-      justify-content: center;
-      min-height: 100vh;
-      align-items: flex-start;
-    }
-
-    form#membershipForm {
-      background-color: #fff;
-      padding: 2.5rem 3rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
-      max-width: 650px;
-      width: 100%;
-      text-align: left;
-    }
-
-    form#membershipForm h2 {
-      color: #f06292;
-      margin-bottom: 1.2rem;
-      font-weight: 700;
-      text-align: center;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    form#membershipForm h3 {
-      color: #ffca28;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      border-bottom: 2px solid #ffca28;
-      padding-bottom: 0.3rem;
-    }
-
-    #membershipInfo p {
-      color: #555;
-      margin-bottom: 1.8rem;
-      font-size: 1rem;
-    }
-
-    #membershipInfo {
-      background-color: #fff5f8;
-      padding: 1.8rem 2rem;
-      border-radius: 14px;
-      box-shadow: 0 6px 15px rgba(255, 202, 40, 0.2);
-      margin-bottom: 2.5rem;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-      margin-top: 1rem;
-    }
-
-    table thead tr {
-      background-color: #ffe082;
-      color: #795548;
-      font-weight: 600;
-    }
-
-    table, th, td {
-      border: 1px solid #ffd54f;
-      padding: 10px 14px;
-    }
-
-    table tbody tr:nth-child(even) {
-      background-color: #fff8e1;
-    }
-
-    table ul {
-      padding-left: 1.2rem;
-      list-style-type: disc;
-      color: #4a4a4a;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-weight: 600;
-      color: #555;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="date"],
-    select {
-      width: 100%;
-      padding: 0.55rem 0.85rem;
-      margin-bottom: 1.4rem;
-      border: 2px solid #f8bbd0;
-      border-radius: 10px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-      background-color: #fff;
-    }
-
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="tel"]:focus,
-    input[type="date"]:focus,
-    select:focus {
-      border-color: #f06292;
-      outline: none;
-      box-shadow: 0 0 8px rgba(240, 98, 146, 0.5);
-    }
-
-    input[type="checkbox"] {
-      margin-right: 0.5rem;
-      transform: scale(1.1);
-      vertical-align: middle;
-    }
-
-    label[for="terms"],
-    label[for="consent"] {
-      font-weight: 500;
-      font-size: 0.95rem;
-      color: #666;
-    }
-
-    label a {
-      color: #f06292;
-      text-decoration: none;
-    }
-
-    label a:hover {
-      text-decoration: underline;
-      color: #d81b60;
-    }
-
-    button[type="submit"] {
-      background: linear-gradient(90deg, #f06292 0%, #ffca28 100%);
-      color: #fff;
-      border: none;
-      border-radius: 30px;
-      padding: 0.85rem 0;
-      font-size: 1.15rem;
-      font-weight: 700;
-      width: 100%;
-      cursor: pointer;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-      box-shadow: 0 4px 15px rgba(240, 98, 146, 0.5);
-    }
-
-    button[type="submit"]:hover {
-      box-shadow: 0 6px 20px rgba(255, 202, 40, 0.7);
-      transform: scale(1.05);
-    }
-
-    input[type="checkbox"][name="eventPreference"] {
-      margin-right: 0.6rem;
-    }
-
-    input[type="checkbox"][name="eventPreference"] + label {
-      display: inline-block;
-      margin-right: 1.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      color: #444;
-    }
-
-    /* Responsive */
-    @media (max-width: 680px) {
-      form#membershipForm {
-        padding: 1.5rem 1rem;
-        max-width: 100%;
-      }
-
-      table,
-      table thead,
-      table tbody,
-      table th,
-      table td,
-      table tr {
-        display: block;
-        width: 100%;
-      }
-
-      table thead {
-        display: none;
-      }
-
-      table tr {
-        margin-bottom: 1.5rem;
-        border: 1px solid #ffd54f;
-        border-radius: 10px;
-        padding: 1rem;
-        background-color: #fff8e1;
-      }
-
-      table td {
-        position: relative;
-        padding-left: 50%;
-        text-align: left;
-        border: none;
-        border-bottom: 1px solid #ffd54f;
-      }
-
-      table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 1rem;
-        top: 0.8rem;
-        font-weight: bold;
-        color: #795548;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="membresia.css" />
 </head>
 <body>
 
@@ -279,107 +54,113 @@
             <div class="menu-overlay" id="menuOverlay"></div>
 
         </header>
-        <section class="artist-banner" role="banner" aria-label="Invitación para artistas">
-            <p>¿Eres artista? Súmate a nuestra comunidad</p>
-        </section>
+        
     </div>
+    <br>
 
-<main style="margin-top: 120px;">
-  <form id="membershipForm" action="/submit-membership" method="POST">
+<main>
+    <form id="membershipForm" action="/submit-membership" method="POST">
 
-    <h2>Registro de Membresía</h2>
+      <h2>Registro de Membresía</h2>
 
-    <label for="fullName">Nombre completo*</label>
-    <input type="text" id="fullName" name="fullName" required placeholder="Tu nombre completo"><br>
+      <label for="fullName">Nombre completo*</label>
+      <input type="text" id="fullName" name="fullName" required placeholder="Tu nombre completo"><br>
 
-    <label for="email">Correo electrónico*</label>
-    <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com"><br>
+      <label for="email">Correo electrónico*</label>
+      <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com"><br>
 
-    <label for="phone">Número de teléfono</label>
-    <input type="tel" id="phone" name="phone" placeholder="+34 612 345 678"><br>
+      <label for="registerPassword">Contraseña*</label>
+      <input type="password" id="registerPassword" name="registerPassword" required
+        placeholder="Crea una contraseña"><br>
 
-    <label for="birthDate">Fecha de nacimiento</label>
-    <input type="date" id="birthDate" name="birthDate"><br>
 
-    <section id="membershipInfo">
-      <h3>Membresías y beneficios exclusivos</h3>
-      <p>Elige la membresía que mejor se adapte a ti y disfruta de los siguientes beneficios:</p>
+      <label for="phone">Número de teléfono</label>
+      <input type="tel" id="phone" name="phone" placeholder="+51 934 567 890"><br>
 
-      <table>
-        <tbody>
-          <tr>
-            <td data-label="Nivel"><strong>Básica</strong></td>
-            <td data-label="Beneficios principales">
-              <ul>
-                <li>Newsletter mensual con novedades y promociones.</li>
-                <li>Acceso a descuentos exclusivos online. JASJKWJSIOJXIOJ</li>
-              </ul>
-            </td>
-            <td data-label="Precio mensual">$10</td>
-          </tr>
-          <tr>
-            <td data-label="Nivel"><strong>Premium</strong></td>
-            <td data-label="Beneficios principales">
-              <ul>
-                <li>Todo lo de Básica, más:</li>
-                <li>Acceso anticipado a nuevas colecciones.</li>
-                <li>Invitaciones a eventos especiales.</li>
-              </ul>
-            </td>
-            <td data-label="Precio mensual">$30</td>
-          </tr>
-          <tr>
-            <td data-label="Nivel"><strong>VIP</strong></td>
-            <td data-label="Beneficios principales">
-              <ul>
-                                <li>Todo lo de Premium, más:</li>
-                <li>Asesoría personalizada para compra e inversión.</li>
-                <li>Acceso VIP a eventos privados.</li>
-                <li>Regalos exclusivos y acceso prioritario.</li>
-              </ul>
-            </td>
-            <td data-label="Precio mensual">$50</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+      <label for="birthDate">Fecha de nacimiento</label>
+      <input type="date" id="birthDate" name="birthDate"><br>
 
-    <label for="membershipType">Tipo de membresía*</label>
-    <select id="membershipType" name="membershipType" required>
-      <option value="" disabled selected>Selecciona una opción</option>
-      <option value="basica">Básica – $10 / mes</option>
-      <option value="premium">Premium – $30 / mes</option>
-      <option value="vip">VIP – $50 / mes</option>
-    </select><br>
+      <section id="membershipInfo">
+        <h3>Membresías y beneficios</h3>
+        <p>Selecciona una opción según los beneficios que desees. Aquí tienes un resumen:</p>
 
-    <label for="paymentMethod">Método de pago preferido</label>
-    <select id="paymentMethod" name="paymentMethod">
-      <option value="" disabled selected>Selecciona una opción</option>
-      <option value="tarjeta">Tarjeta de crédito/débito</option>
-      <option value="paypal">PayPal</option>
-      <option value="transferencia">Transferencia bancaria</option>
-    </select><br>
+        <ul>
+          <li><strong>Básica:</strong> Newsletter y descuentos online. — <em>$10/mes</em></li>
+          <li><strong>Premium:</strong> Acceso anticipado y eventos especiales. — <em>$30/mes</em></li>
+          <li><strong>VIP:</strong> Todo lo anterior + asesoría y regalos exclusivos. — <em>$50/mes</em></li>
+        </ul>
 
-    <label for="contactPreference">Preferencia para eventos</label>
-    <input type="checkbox" id="eventVirtual" name="eventPreference" value="Virtual">
-    <label for="eventVirtual">Virtual</label><br>
-    <input type="checkbox" id="eventPresencial" name="eventPreference" value="Presencial">
-    <label for="eventPresencial">Presencial</label><br>
+        <details>
+          <summary>Ver detalles completos de cada membresía</summary>
+          <div class="details-content">
+            <ul>
+              <li><strong>Básica:</strong>
+                <ul>
+                  <li>Newsletter mensual con novedades y promociones</li>
+                  <li>Acceso a descuentos exclusivos online</li>
+                </ul>
+              </li>
+              <li><strong>Premium:</strong>
+                <ul>
+                  <li>Todo lo de Básica</li>
+                  <li>Acceso anticipado a nuevas colecciones</li>
+                  <li>Invitaciones a eventos especiales</li>
+                </ul>
+              </li>
+              <li><strong>VIP:</strong>
+                <ul>
+                  <li>Todo lo de Premium</li>
+                  <li>Asesoría personalizada para compra e inversión</li>
+                  <li>Acceso VIP a eventos privados</li>
+                  <li>Regalos exclusivos y acceso prioritario</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </details>
+      </section>
 
-    <input type="checkbox" id="terms" name="terms" required>
-    <label for="terms">Acepto los <a href="/terminos-y-condiciones" target="_blank">términos y condiciones</a> y la <a href="/politica-de-privacidad" target="_blank">política de privacidad</a>*</label><br>
 
-    <input type="checkbox" id="consent" name="consent">
-    <label for="consent">Acepto recibir comunicaciones promocionales y noticias</label><br>
+      <label for="membershipType">Tipo de membresía*</label>
+      <select id="membershipType" name="membershipType" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="basica">Básica – $10 / mes</option>
+        <option value="premium">Premium – $30 / mes</option>
+        <option value="vip">VIP – $50 / mes</option>
+      </select><br>
 
-    <button type="submit">Registrarme</button>
+      <label for="paymentMethod">Método de pago preferido</label>
+      <select id="paymentMethod" name="paymentMethod">
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="tarjeta">Tarjeta de crédito/débito</option>
+        <option value="paypal">PayPal</option>
+        <option value="transferencia">Transferencia bancaria</option>
+      </select><br>
 
-  </form>
+
+
+      <input type="checkbox" id="terms" name="terms" required>
+      <label for="terms">Acepto los <a href="/terminos-y-condiciones" target="_blank">términos y condiciones</a> y la <a
+          href="/politica-de-privacidad" target="_blank">política de privacidad</a>*</label><br>
+
+      <button type="submit" id="btn-register-membresia">Registrarme</button>
+
+    </form>
+
   </main>
 
 
-
   <script src="main.js"></script>
+  <script src="membresia.js"></script>
+
+  <!-- Modal personalizado -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2>¡Gracias por tu registro!</h2>
+    <p>Tu registro ha sido exitoso. ¡Bienvenido a nuestra comunidad!</p>
+    <button id="cerrar">Aceptar</button>
+  </div>
+</div>
 </body>
 </html>
 
