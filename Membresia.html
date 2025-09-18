@@ -90,34 +90,51 @@
           <li><strong>VIP:</strong> Todo lo anterior + asesoría y regalos exclusivos. — <em>$50/mes</em></li>
         </ul>
 
-        <details>
-          <summary>Ver detalles completos de cada membresía</summary>
-          <div class="details-content">
-            <ul>
-              <li><strong>Básica:</strong>
-                <ul>
-                  <li>Newsletter mensual con novedades y promociones</li>
-                  <li>Acceso a descuentos exclusivos online</li>
-                </ul>
-              </li>
-              <li><strong>Premium:</strong>
-                <ul>
-                  <li>Todo lo de Básica</li>
-                  <li>Acceso anticipado a nuevas colecciones</li>
-                  <li>Invitaciones a eventos especiales</li>
-                </ul>
-              </li>
-              <li><strong>VIP:</strong>
-                <ul>
-                  <li>Todo lo de Premium</li>
-                  <li>Asesoría personalizada para compra e inversión</li>
-                  <li>Acceso VIP a eventos privados</li>
-                  <li>Regalos exclusivos y acceso prioritario</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </details>
+        <table class="tabla-membresias">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Precio</th>
+      <th>Beneficios</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Básica</strong></td>
+      <td>$10/mes</td>
+      <td>
+        <ul>
+          <li>Newsletter mensual</li>
+          <li>Descuentos exclusivos online</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Premium</strong></td>
+      <td>$30/mes</td>
+      <td>
+        <ul>
+          <li>Todo lo de Básica</li>
+          <li>Acceso anticipado a colecciones</li>
+          <li>Eventos especiales</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>VIP</strong></td>
+      <td>$50/mes</td>
+      <td>
+        <ul>
+          <li>Todo lo de Premium</li>
+          <li>Asesoría personalizada</li>
+          <li>Eventos privados VIP</li>
+          <li>Regalos exclusivos</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
       </section>
 
 
@@ -153,7 +170,15 @@
   <script src="main.js"></script>
   <script src="membresia.js"></script>
 
- 
+ <!-- Modal personalizado -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2>🎉 ¡Gracias por unirte a ArteNova!</h2>
+    <p>Nos alegra tenerte con nosotros. Pronto recibirás noticias exclusivas en tu correo.</p>
+    <button id="cerrar">Aceptar</button>
+  </div>
+</div>
+
 </div>
 </body>
 </html>

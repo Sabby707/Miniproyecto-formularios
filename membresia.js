@@ -1,32 +1,51 @@
-//registar usuario
-document.getElementById("btn-register-membresia").addEventListener("click", function() {
-    let nuevoUsuario = {
-        nombreCompleto: document.getElementById("fullName").value,
-        email: document.getElementById("email").value,
-        numero: document.getElementById("phone").value,
-        contraseña: document.getElementById("registerPassword").value,
-        fechadenacimiento: document.getElementById("birthDate").value
-    };
-  
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("membershipForm");
+    const modal = document.getElementById("modal");
+    const cerrarBtn = document.getElementById("cerrar");
 
-    // Obtener la lista de usuarios del almacenamiento local (localStorage) o inicializar un array vacío si no existe
-    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Evita que se envíe el formulario
 
-    // Agregar el nuevo usuario a la lista
-    usuarios.push(nuevoUsuario);
-    
-    // Guardar el nuevo usuario en el almacenamiento local (localStorage)
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
-    alert("Bienvenido, " + nuevoUsuario.nombreCompleto + "!");
+        // Capturar datos
+        const nombre = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const password = document.getElementById("registerPassword").value;
+        const birthDate = document.getElementById("birthDate").value;
 
-    // Limpiar los campos del formulario
-    document.getElementById("fullName").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("registerPassword").value = "";
-    document.getElementById("phone").value = "";
-    document.getElementById("birthDate").value = "";
+        // Crear nuevo usuario
+        let nuevoUsuario = {
+            nombreCompleto: nombre,
+            email: email,
+            numero: phone,
+            contraseña: password,
+            fechadenacimiento: birthDate
+        };
 
+        // Guardar en localStorage
+        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        usuarios.push(nuevoUsuario);
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+        // Personalizar modal
+        modal.querySelector("h2").textContent = `🎉 ¡Gracias, ${nombre || "amig@"}, por unirte a ArteNova!`;
+        modal.querySelector("p").textContent = "Nos alegra tenerte con nosotros. Pronto recibirás noticias exclusivas en tu correo.";
+
+        // Mostrar modal
+        modal.style.display = "flex";
+
+        // Limpiar formulario
+        form.reset();
+    });
+
+    // Cerrar modal
+    cerrarBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
 });
-
-
-
