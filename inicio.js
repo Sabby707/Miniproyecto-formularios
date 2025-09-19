@@ -64,7 +64,7 @@ toggleBtn.addEventListener('click', () => {
 });
 
 
-
+//modal login
 document.addEventListener("DOMContentLoaded", function () {
   const abrirLogin = document.getElementById("abrirLogin");
   const modalLogin = document.getElementById("modalLogin");
@@ -102,3 +102,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+// Escuchar mensajes desde el iframe (login.html)
+window.addEventListener("message", function (event) {
+    if (event.data && event.data.tipo === 'loginExitoso') {
+        const modalLogin = document.getElementById("modalLogin");
+        modalLogin.classList.remove("open");
+        modalLogin.setAttribute("aria-hidden", "true");
+    }
+});
+

@@ -20,8 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Puedes redirigir después de 1 segundo, si quieres
             setTimeout(() => {
-                window.location.href = "index.html"; // o donde quieras llevarlo
-            }, 1500);
+    // Envía mensaje al padre para cerrar el modal
+    window.parent.postMessage({ tipo: 'loginExitoso' }, '*');
+}, 1500);
+
 
         } else {
             mensaje.textContent = "❌ Correo o contraseña incorrectos.";
