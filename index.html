@@ -159,11 +159,15 @@
 
     <section class="Botones flotantes">
 
-        <div class="floating-buttons login">
-            <a href="login.html" class="floating-btn" target="_blank" aria-label="Iniciar sesión">
-                <i class="fas fa-user"></i>
-            </a>
-        </div>
+        <!-- Botón flotante de login -->
+        <!-- Reemplaza tu <a href="login.html" ...> por esto -->
+<div class="floating-buttons login">
+  <button id="abrirLogin" class="floating-btn" aria-label="Iniciar sesión" type="button">
+    <i class="fas fa-user"></i>
+  </button>
+</div>
+
+
 
         <div class="floating-buttons whatsapp">
             <a href="https://wa.me/707070707" class="floating-btn" target="_blank" aria-label="WhatsApp">
@@ -203,6 +207,14 @@
 
     <script src="main.js"></script>
     <script src="inicio.js"></script>
+
+<!-- Modal de Login -->
+<div id="modalLogin" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Ventana de inicio de sesión">
+  <div class="modal-content">
+    <button id="cerrarLogin" class="close" aria-label="Cerrar">&times;</button>
+    <iframe src="login.html" title="Formulario de inicio de sesión"></iframe>
+  </div>
+</div>
 
 </body>
 

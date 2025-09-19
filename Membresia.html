@@ -6,10 +6,11 @@
   <title>Registro de Membresía</title>
   <link rel="stylesheet" href="stylegeneral.css" />
   <link rel="stylesheet" href="membresia.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
-  <div class="header-group">
+   <div class="header-group">
         <header>
             <h1><a href="index.html">ArteNova</a></h1>
 
@@ -48,15 +49,15 @@
                     <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/es/" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                 </div>
-
             </div>
 
             <div class="menu-overlay" id="menuOverlay"></div>
-
         </header>
-        
+
+        <section class="artist-banner" role="banner" aria-label="Invitación para artistas">
+            <p>¿Eres artista? Súmate a nuestra comunidad</p>
+        </section>
     </div>
-    <br>
 
 <main>
     <form id="membershipForm" action="/submit-membership" method="POST">
@@ -70,9 +71,7 @@
       <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com"><br>
 
       <label for="registerPassword">Contraseña*</label>
-      <input type="password" id="registerPassword" name="registerPassword" required
-        placeholder="Crea una contraseña"><br>
-
+      <input type="password" id="registerPassword" name="registerPassword" required placeholder="Crea una contraseña"><br>
 
       <label for="phone">Número de teléfono</label>
       <input type="tel" id="phone" name="phone" placeholder="+51 934 567 890"><br>
@@ -82,7 +81,7 @@
 
       <section id="membershipInfo">
         <h3>Membresías y beneficios</h3>
-        <p>Selecciona una opción según los beneficios que desees. Aquí tienes un resumen:</p>
+        <p>Selecciona una opción según los beneficios que desees:</p>
 
         <ul>
           <li><strong>Básica:</strong> Newsletter y descuentos online. — <em>$10/mes</em></li>
@@ -91,52 +90,50 @@
         </ul>
 
         <table class="tabla-membresias">
-  <thead>
-    <tr>
-      <th>Tipo</th>
-      <th>Precio</th>
-      <th>Beneficios</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Básica</strong></td>
-      <td>$10/mes</td>
-      <td>
-        <ul>
-          <li>Newsletter mensual</li>
-          <li>Descuentos exclusivos online</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Premium</strong></td>
-      <td>$30/mes</td>
-      <td>
-        <ul>
-          <li>Todo lo de Básica</li>
-          <li>Acceso anticipado a colecciones</li>
-          <li>Eventos especiales</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>VIP</strong></td>
-      <td>$50/mes</td>
-      <td>
-        <ul>
-          <li>Todo lo de Premium</li>
-          <li>Asesoría personalizada</li>
-          <li>Eventos privados VIP</li>
-          <li>Regalos exclusivos</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Precio</th>
+              <th>Beneficios</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Básica</strong></td>
+              <td>$10/mes</td>
+              <td>
+                <ul>
+                  <li>Newsletter mensual</li>
+                  <li>Descuentos exclusivos online</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Premium</strong></td>
+              <td>$30/mes</td>
+              <td>
+                <ul>
+                  <li>Todo lo de Básica</li>
+                  <li>Acceso anticipado a colecciones</li>
+                  <li>Eventos especiales</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>VIP</strong></td>
+              <td>$50/mes</td>
+              <td>
+                <ul>
+                  <li>Todo lo de Premium</li>
+                  <li>Asesoría personalizada</li>
+                  <li>Eventos privados VIP</li>
+                  <li>Regalos exclusivos</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </section>
-
 
       <label for="membershipType">Tipo de membresía*</label>
       <select id="membershipType" name="membershipType" required>
@@ -154,23 +151,44 @@
         <option value="transferencia">Transferencia bancaria</option>
       </select><br>
 
-
-
       <input type="checkbox" id="terms" name="terms" required>
-      <label for="terms">Acepto los <a href="/terminos-y-condiciones" target="_blank">términos y condiciones</a> y la <a
-          href="/politica-de-privacidad" target="_blank">política de privacidad</a>*</label><br>
+      <label for="terms">Acepto los <a href="/terminos-y-condiciones" target="_blank">términos y condiciones</a> y la <a href="/politica-de-privacidad" target="_blank">política de privacidad</a>*</label><br>
 
       <button type="submit" id="btn-register-membresia">Registrarme</button>
-
     </form>
+</main>
 
-  </main>
+<!-- Botones flotantes -->
+<section class="floating-buttons"><!-- ✅ corregido -->
+    <a href="https://wa.me/707070707" class="floating-btn whatsapp" target="_blank" aria-label="WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+</section>
 
+<button id="faq-btn" class="faq-btn" aria-label="Preguntas frecuentes">
+    <i class="fas fa-question"></i>
+</button>
 
-  <script src="main.js"></script>
-  <script src="membresia.js"></script>
+<div class="faq-container" id="faq-container">
+    <div class="faq-item">
+        <strong>¿Cómo puedo contactar soporte?</strong>
+        <div class="faq-answer">Puedes contactarnos a través del formulario en nuestra página de contacto.</div>
+    </div>
+    <div class="faq-item">
+        <strong>¿Cómo me uno como artista?</strong>
+        <div class="faq-answer">Completa el formulario en la sección Contacto. Revisamos tu portafolio y te respondemos en 7 días</div>
+    </div>
+    <div class="faq-item">
+        <strong>¿Puedo pedir una obra personalizada?</strong>
+        <div class="faq-answer">¡Sí! Muchos de nuestros artistas ofrecen obras por encargo. Escríbenos a contacto@artenova.pe con los detalles.</div>
+    </div>
+</div>
 
- <!-- Modal personalizado -->
+<footer>
+    <p>© 2025 Artenova. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Modal personalizado -->
 <div id="modal" class="modal">
   <div class="modal-content">
     <h2>🎉 ¡Gracias por unirte a ArteNova!</h2>
@@ -179,7 +197,7 @@
   </div>
 </div>
 
-</div>
+<script src="main.js"></script>
+<script src="membresia.js"></script>
 </body>
 </html>
-

@@ -62,3 +62,43 @@ toggleBtn.addEventListener('click', () => {
         }, 200);
     }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const abrirLogin = document.getElementById("abrirLogin");
+  const modalLogin = document.getElementById("modalLogin");
+  const cerrarLogin = document.getElementById("cerrarLogin");
+
+  if (!abrirLogin || !modalLogin || !cerrarLogin) {
+    console.warn("Faltan elementos del modal (abrirLogin / modalLogin / cerrarLogin). Revisa IDs.");
+    return;
+  }
+
+  abrirLogin.addEventListener("click", function (e) {
+    e.preventDefault();
+    modalLogin.classList.add("open");
+    modalLogin.setAttribute("aria-hidden", "false");
+  });
+
+  cerrarLogin.addEventListener("click", function () {
+    modalLogin.classList.remove("open");
+    modalLogin.setAttribute("aria-hidden", "true");
+  });
+
+  // Cerrar al clicar fuera del contenido
+  modalLogin.addEventListener("click", function (e) {
+    if (e.target === modalLogin) {
+      modalLogin.classList.remove("open");
+      modalLogin.setAttribute("aria-hidden", "true");
+    }
+  });
+
+  // Esc para cerrar
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modalLogin.classList.contains("open")) {
+      modalLogin.classList.remove("open");
+      modalLogin.setAttribute("aria-hidden", "true");
+    }
+  });
+});
